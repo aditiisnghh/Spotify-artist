@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Artist Search</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #1DB954; /* Spotify Green */
+            font-size: 36px;
+        }
+        
+        .search-form {
+            margin-top: 30px;
+        }
+        
+        label {
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        input[type="text"] {
+            width: 250px;
+            height: 30px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            background-color: #1DB954; /* Spotify Green */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #26c965; /* Slightly lighter green on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Spotify Artist Search</h1>
+    <form class="search-form" action="/search" method="post">
+        <label for="artist_name">Enter the artist's name:</label>
+        <br>
+        <input type="text" name="artist_name" id="artist_name" required>
+        <br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

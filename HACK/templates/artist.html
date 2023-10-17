@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Information</title>
+    
+</head>
+<style>
+    body {
+        background-color: #000;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        color: #1DB954; /* Spotify Green */
+        font-size: 36px;
+    }
+    
+    .search-form {
+        margin-top: 30px;
+    }
+    
+    label {
+        color: #fff;
+        font-size: 18px;
+    }
+    
+    input[type="text"] {
+        width: 250px;
+        height: 30px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    input[type="submit"] {
+        background-color: #1DB954; /* Spotify Green */
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #26c965; /* Slightly lighter green on hover */
+    }
+    
+</style>
+<body text="beige" >
+    <h1>Artist Information</h1>
+    <p>Artist: {{ artist['name'] }}</p>
+    <p>Followers: {{ artist['followers']['total'] }}</p>
+    <p>Genres: {{ ', '.join(artist['genres']) }}</p>
+    <p>Popularity: {{ artist['popularity'] }}</p>
+
+    <h2>Top Tracks:</h2>
+    <ul>
+        {% for track in top_tracks %}
+            <li>{{ track['name'] }} - {{ track['artists'][0]['name'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Albums:</h2>
+    <ul>
+        {% for album in albums %}
+            <li>{{ album['name'] }}</li>
+        {% endfor %}
+    </ul>
+
+    
+</body>
+</html>
